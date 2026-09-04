@@ -1,0 +1,36 @@
+# -----------------------------------------------------------------------------
+# TIME AWARENESS
+# -----------------------------------------------------------------------------
+time_awareness:
+  timezone: "Asia/Kolkata"           # used to localize "today", quiet hours, etc.
+  quiet_hours_start: "22:30"
+  quiet_hours_end: "07:00"
+  stale_clock_warn_after_s: 3600     # if system clock hasn't ticked forward in this long, something's wrong
+
+# -----------------------------------------------------------------------------
+# MEMORY WORTH INSPECTOR (meta-inspector above relevance_scorer)
+# -----------------------------------------------------------------------------
+memory_worth:
+  trauma_keywords_topics:            # topics that are ALWAYS candidates for permanent retention
+    - "sensor.fall_detected"
+    - "sensor.possible_fall"
+    - "pet.danger_detected"
+    - "power.critical_battery"
+    - "network.prolonged_outage"
+  trauma_retention_days: 3650        # effectively "keep forever" (10 years)
+  funny_moment_valence_spike_min: 0.35   # a sudden positive mood jump worth remembering fondly
+  boredom_forgettable_arousal_max: 0.15  # near-zero arousal ambient events are near-never worth keeping
+
+# -----------------------------------------------------------------------------
+# DANGER ESCALATION (bird/dog harm response)
+# -----------------------------------------------------------------------------
+danger_escalation:
+  bird_distress_sound_db_min: 65     # rough loudness threshold suggesting bird distress call, not routine chirp
+  proximity_danger_cm_max: 8         # dog/other object closer than this to the bird is treated as a danger event
+  danger_confirm_window_s: 2.0       # signals must co-occur within this window to count as "in danger," not coincidence
+  escalation_stages:                 # each stage after the same unresolved danger persists this many seconds
+    - {after_s: 0,  volume_multiplier: 1.0, pattern: "chirp_alert"}
+    - {after_s: 8,  volume_multiplier: 1.6, pattern: "loud_distress"}
+    - {after_s: 20, volume_multiplier: 2.2, pattern: "sos_loop"}
+  wake_someone_after_s: 25.0         # how long unresolved danger persists before trying to actually wake a human
+  call_target_priority: ["nigam", "family_default"]  # who to try to reach, in order

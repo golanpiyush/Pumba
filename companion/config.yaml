@@ -1,0 +1,243 @@
+# =============================================================================
+# config.yaml — THE single source of truth for every tunable number in the
+# system. No module should hardcode a threshold, timeout, pin number, or
+# color. If a value feels like a "magic number" while writing a module, it
+# belongs here instead, with a comment explaining what tuning it does.
+# =============================================================================
+
+identity:
+  name: "Pebble"
+  species_flavor: "small curious creature, part bird-dog-otter energy"
+  home_location: "bird_cage"          # matches a key under environment.locations
+  habitat: "desk"
+  
+# -----------------------------------------------------------------------------
+# EVENT BUS
+# -----------------------------------------------------------------------------
+event_bus:
+  queue_max_size: 512
+  # reflex events must be handled within this budget or we log a latency warning
+  reflex_latency_budget_ms: 50
+  history_buffer_size: 200            # ring buffer of recent events, for debugging/inspector
+
+# -----------------------------------------------------------------------------
+# INSTINCT LAYER — reflex vs deliberate routing
+# -----------------------------------------------------------------------------
+instinct:
+  # events at/above this urgency skip mood/LLM entirely and go straight to a reflex
+  reflex_urgency_threshold: 0.7
+  # cooldown so the same reflex can't re-fire and spam the body every tick
+  reflex_cooldown_s: 2.0
+  # if no reflex claims an event, but this many seconds pass with no response
+  # at all, escalate to a default "confused" reflex rather than stay silent
+  max_silent_s: 5.0
+
+# -----------------------------------------------------------------------------
+# MOOD ENGINE
+# -----------------------------------------------------------------------------
+mood:
+  # mood is a point in valence/arousal space, decayed toward baseline over time
+  baseline_valence: 0.55
+  baseline_arousal: 0.35
+  decay_half_life_s: 90.0             # how fast mood drifts back to baseline
+  tick_interval_s: 1.0
+  # thresholds for discretizing continuous mood into named states used by prompts/face
+  states:
+    sleepy_arousal_max: 0.2
+    bored_arousal_max: 0.35
+    bored_valence_max: 0.45
+    annoyed_valence_max: 0.35
+    excited_arousal_min: 0.75
+    curious_valence_min: 0.55
+  event_deltas:                       # how much each event nudges valence/arousal
+    bird_activity: {valence: 0.08, arousal: 0.10}
+    dog_activity: {valence: 0.04, arousal: 0.15}
+    person_recognized: {valence: 0.15, arousal: 0.10}
+    stranger_detected: {valence: -0.05, arousal: 0.25}
+    startle: {valence: -0.25, arousal: 0.6}
+    praise: {valence: 0.3, arousal: 0.1}
+    scold: {valence: -0.3, arousal: 0.1}
+    long_idle: {valence: -0.05, arousal: -0.1}
+
+# -----------------------------------------------------------------------------
+# OPERATING MODES
+# -----------------------------------------------------------------------------
+operating_mode:
+  default: "normal"
+  privacy:
+    disable_cloud_llm: true
+    disable_audio_recording_persist: true
+    face_indicator_color: "#FF00AA"   # shown so nobody forgets privacy mode is on
+  debug:
+    verbose_event_log: true
+    show_internal_state_on_face: true
+
+# -----------------------------------------------------------------------------
+# ENVIRONMENT MODEL (where am I?)
+# -----------------------------------------------------------------------------
+environment:
+  locations: ["bird_cage", "desk", "unknown"]
+  location_confidence_min: 0.6        # below this, location is "unknown"
+  location_confirm_window_s: 10.0     # sensor agreement window before switching locations
+  priorities:
+    bird_cage: ["watch_bird", "guard_wires", "monitor_dog_proximity"]
+    desk: ["watch_person", "monitor_dog_proximity"]
+    unknown: ["orient", "call_for_help_if_prolonged"]
+  unknown_location_help_after_s: 120.0
+
+# -----------------------------------------------------------------------------
+# SENSORS
+# -----------------------------------------------------------------------------
+sensors:
+  poll_interval_s: 0.1
+  pir:
+    pin: 17
+    debounce_s: 0.3
+  ultrasonic:
+    trigger_pin: 23
+    echo_pin: 24
+    max_valid_cm: 400
+    fall_drop_cm: 25            # sudden increase in ground distance beyond this = possible fall
+  mpu6050:
+    i2c_address: 0x68
+    fall_accel_threshold_g: 2.5
+    tilt_alert_deg: 60
+    sample_rate_hz: 50
+  dpdt_mode_switch:
+    pin: 27
+  pet_presence:
+    bird_motion_confidence_min: 0.5
+    dog_motion_confidence_min: 0.5
+    # size/sound heuristics distinguishing dog vs bird when no camera present
+    bird_max_echo_delta_cm: 15
+    dog_min_echo_delta_cm: 30
+    bird_sound_freq_hz_range: [1500, 8000]
+    dog_sound_freq_hz_range: [80, 600]
+
+# -----------------------------------------------------------------------------
+# VOICE
+# -----------------------------------------------------------------------------
+voice:
+  vad:
+    aggressiveness: 2                 # 0-3, webrtcvad style
+    frame_ms: 30
+    silence_timeout_s: 1.2
+  stt:
+    model_size: "base.en"
+    device: "cpu"
+    sample_rate_hz: 16000
+  speaker_id:
+    match_confidence_min: 0.75
+    enroll_min_samples: 3
+    voiceprint_dir: "people/voiceprints"
+  tts:
+    default_voice: "en-US-AnaNeural"
+    rate: "+5%"
+    per_person_voice_overrides_key: "tts_voice"   # looked up in people/profiles.yaml
+
+# -----------------------------------------------------------------------------
+# BRAIN / LLM ROUTING
+# -----------------------------------------------------------------------------
+brain:
+  llm_router:
+    # escalate to LLM only when local rules can't confidently classify intent
+    local_confidence_escalate_below: 0.55
+    prefer_local_first: true
+    cloud_daily_call_budget: 200
+  local_llm:
+    model_path: "models/local-instinct-llm.gguf"
+    max_tokens: 128
+    temperature: 0.6
+    timeout_s: 4.0
+  gemini:
+    model: "gemini-2.5-flash"
+    max_tokens: 256
+    temperature: 0.8
+    timeout_s: 8.0
+  inspector:
+    relevance_min_score: 0.4          # below this, a memory candidate is discarded
+    contradiction_block: true         # block responses that contradict known facts
+
+# -----------------------------------------------------------------------------
+# MEMORY
+# -----------------------------------------------------------------------------
+memory:
+  episodic:
+    db_path: "memory/episodic.sqlite3"
+    retention_days_default: 30
+    retention_days_notable: 365       # incidents/funny moments kept much longer
+    notability_score_min: 0.6         # events scoring above this become "notable"
+  semantic:
+    db_path: "memory/semantic.sqlite3"
+    max_facts_per_subject: 500
+  people:
+    db_path: "memory/people.sqlite3"
+  consolidation:
+    run_interval_s: 3600              # how often short-term -> long-term consolidation runs
+    min_repeats_for_pattern: 3        # same-ish event N times => becomes a "pattern" belief
+
+# -----------------------------------------------------------------------------
+# BODY / EXPRESSION
+# -----------------------------------------------------------------------------
+body:
+  face:
+    oled:
+      i2c_address: 0x3C
+      width_px: 128
+      height_px: 64
+    animator:
+      fps: 12
+      blink_interval_s_range: [3.0, 8.0]
+  rgb:
+    led_count: 8
+    pin: 18
+    brightness: 0.4
+    colors:
+      curious: "#3FA7FF"
+      bored: "#7A7A7A"
+      annoyed: "#FF5A3C"
+      sleepy: "#5B4B8A"
+      excited: "#FFD23F"
+      alarm: "#FF0000"
+      privacy: "#FF00AA"
+  seven_segment:
+    i2c_address: 0x70
+    brightness: 0.5
+
+# -----------------------------------------------------------------------------
+# POWER
+# -----------------------------------------------------------------------------
+power:
+  battery_adc_channel: 0
+  full_voltage: 4.2
+  empty_voltage: 3.3
+  low_battery_pct: 20
+  critical_battery_pct: 8
+  poll_interval_s: 30.0
+  modes:
+    normal: {cpu_throttle: 1.0, sensor_poll_multiplier: 1.0}
+    low_power: {cpu_throttle: 0.6, sensor_poll_multiplier: 2.0}
+    critical: {cpu_throttle: 0.3, sensor_poll_multiplier: 4.0}
+
+# -----------------------------------------------------------------------------
+# NETWORK
+# -----------------------------------------------------------------------------
+network:
+  remote_bridge:
+    host: "0.0.0.0"
+    port: 8787
+    heartbeat_interval_s: 10.0
+  watchdog:
+    ping_host: "8.8.8.8"
+    check_interval_s: 15.0
+    offline_after_missed: 3
+    call_for_help_after_s: 300.0      # how long offline before it "panics"
+
+# -----------------------------------------------------------------------------
+# LOGGING
+# -----------------------------------------------------------------------------
+logging:
+  dir: "logs"
+  level: "INFO"
+  max_bytes: 5000000
+  backup_count: 5

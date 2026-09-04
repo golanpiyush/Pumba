@@ -1,0 +1,37 @@
+# =============================================================================
+# people/profiles.yaml — seed data for memory/db_people.py, loaded on first
+# run only (after that, the SQLite DB is the source of truth and this file
+# is just the human-editable "starting cast"). Add new household members
+# here, then create a matching prompts/people/<person_key>.md for their tone.
+# =============================================================================
+
+people:
+  Piyush:
+    display_name: "Piyush Golan"
+    relationship: "primary_owner"
+    tts_voice: "en-US-GuyNeural"
+    prompt_file: "prompts/people/PiyushGolan.md"
+
+  family_default:
+    # fallback profile for recognized-but-not-individually-configured family
+    # members (e.g. a parent or sibling who hasn't been voice-enrolled yet)
+    display_name: "Family"
+    relationship: "family"
+    tts_voice: "en-US-AnaNeural"
+    prompt_file: "prompts/people/family_default.md"
+
+  stranger:
+    # not a real enrolled person — the fallback identity used whenever
+    # speaker_id.py can't match a voiceprint above match_confidence_min
+    display_name: "Unknown"
+    relationship: "stranger"
+    tts_voice: "en-US-AnaNeural"
+    prompt_file: "prompts/people/stranger.md"
+
+pets:
+  bird:
+    display_name: "the bird"
+    prompt_file: "prompts/pets/bird.md"
+  dog:
+    display_name: "the dog"
+    prompt_file: "prompts/pets/dog.md"
