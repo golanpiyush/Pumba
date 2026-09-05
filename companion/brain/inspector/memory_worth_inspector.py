@@ -56,6 +56,15 @@ class MemoryWorthInspector:
         mood_arousal_delta: float,
         time_context: Optional[TimeContext] = None,
     ) -> MemoryWorthVerdict:
+
+        if topic in ("memory.entity_acquired", "memory.entity_named"):
+            return MemoryWorthVerdict(
+                tier="permanent",
+                retention_days=self.cfg["trauma_retention_days"],  # reuse the "keep forever" bucket
+                is_permanent=True,
+                reason=f"identity-forming event ({topic}) always retained",
+            )
+        
         # 1. Trauma / safety-critical tier — always wins, regardless of
         #    how the relevance scorer felt about it.
         if self._is_trauma_tier(topic, payload):

@@ -17,6 +17,7 @@ Outputs: Event(topic="power.battery_level") (ambient, every poll),
 
 from __future__ import annotations
 
+import os
 import threading
 import time
 
@@ -31,6 +32,10 @@ class PowerManager:
         self._last_alerted_mode = "normal"
         self._thread: threading.Thread | None = None
         self._running = False
+        self._mock_battery = None
+        if os.getenv("COMPANION_MOCK_HARDWARE", "true").lower() == "true":
+            from power.mock_power import MockBattery
+            self._mock_battery = MockBattery(cfg)
 
     def start(self) -> None:
         self._running = True
@@ -48,6 +53,8 @@ class PowerManager:
             time.sleep(self.cfg["poll_interval_s"])
 
     def _read_battery_voltage(self) -> float | None:
+        if self._mock_battery is not None:
+            return self._mock_battery.read_voltage()
         # SENSOR INPUT HOOK: real ADC read on self.cfg["battery_adc_channel"]
         # goes here.
         return None

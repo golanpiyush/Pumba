@@ -189,6 +189,30 @@ class Personality:
                 action_topic="expression.mode_change_ack",
                 cooldown_key="mode_switch",
             ),
+            ReflexRule(
+                name="nag_about_overdue_commitment",
+                matches=lambda e: e.topic == "commitment.overdue",
+                action_topic="expression.pointed_reminder",
+                cooldown_key="commitment_nag",
+            ),
+            ReflexRule(
+                name="ask_clarifying_question",
+                matches=lambda e: e.topic == "brain.clarification_needed",
+                action_topic="expression.curious_question",
+                cooldown_key="clarification",
+            ),
+            ReflexRule(
+                name="distress_on_low_battery",
+                matches=lambda e: e.topic == "power.low_battery",
+                action_topic="expression.tired_and_worried",
+                cooldown_key="battery_low",
+            ),
+            ReflexRule(
+                name="panic_on_critical_battery",
+                matches=lambda e: e.topic == "power.critical_battery",
+                action_topic="expression.panicked_low_power",
+                cooldown_key="battery_critical",
+            ),
             # NOTE: pet.danger_detected is intentionally NOT cooldown-suppressed
             # the way other reflexes are — it's routed to DangerEscalationTracker
             # instead, in _on_event, because danger should escalate rather than
@@ -250,10 +274,13 @@ class Personality:
         ))
 
     def _needs_deliberation(self, event: Event) -> bool:
-        # Only events that plausibly carry language/intent (speech transcripts,
-        # direct address, unresolved/ambiguous states) go further. Ambient
-        # sensor noise never reaches the LLM router.
-        return event.topic in {"voice.transcript_ready", "system.unresolved_state"}
+        return event.topic in {
+            "voice.transcript_ready",
+            "system.unresolved_state",
+            "brain.clarification_needed",
+            "commitment.overdue",
+            "power.critical_battery",   # NEW — genuinely worth speaking up about
+        }
 
     def _escalate(self, event: Event) -> None:
         self.bus.publish(Event(

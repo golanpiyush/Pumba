@@ -43,6 +43,7 @@ class PromptBuilder:
         person_key: str = "stranger",
         relevant_pets: list[str] | None = None,
         memory_context: str = "",
+        battery_percent: int | None = None,
     ) -> str:
         sections = [
             self._read("core_identity.md"),
@@ -55,6 +56,8 @@ class PromptBuilder:
             sections.append(self._read(f"pets/{pet}.md"))
         sections.append(self._read("response_rules.md"))
         sections.append(self._format_situation(trigger_event, memory_context))
+        if battery_percent is not None:
+            sections.append(f"## Physical state\nCurrent battery: {battery_percent}%")
         return "\n\n".join(s for s in sections if s)
 
     def _read(self, relative_path: str) -> str:

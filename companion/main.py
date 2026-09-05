@@ -35,7 +35,11 @@ from dotenv import load_dotenv
 from sensors.sensor_bus import SensorBus, Event
 
 
-def load_config(path: str = "config.yaml") -> dict:
+def load_config(path: str | None = None) -> dict:
+    if path is None:
+        # anchor to this file's directory, not the shell's cwd, so
+        # `python main.py` works regardless of where it's launched from
+        path = Path(__file__).resolve().parent / "config.yaml"
     with open(path, "r", encoding="utf-8") as f:
         return yaml.safe_load(f)
 
@@ -73,6 +77,11 @@ class Companion:
         self.memory = None
         self.voice = None
         self.network = None
+        self.commitments_db = None
+        self.commitment_watchdog = None
+        self.entities_db = None
+        self.open_questions_db = None
+        self.entity_resolver = None
 
     def boot(self) -> None:
         self.log.info("Booting %s...", self.cfg["identity"]["name"])
@@ -86,19 +95,31 @@ class Companion:
         use_mock = os.getenv("COMPANION_MOCK_HARDWARE", "true").lower() == "true"
         if use_mock:
             from sensors.mock_sensors import MockSensorArray
-            self.sensor_modules = [MockSensorArray(self.cfg, self.bus)]
+            from sensors.environment_locator import EnvironmentLocator
+            from sensors.companion_context import CompanionContext
+            self.sensor_modules = [
+                MockSensorArray(self.cfg, self.bus),
+                EnvironmentLocator(self.cfg, self.bus),
+                CompanionContext(self.cfg, self.bus),
+            ]
         else:
             from sensors.pir import PIRSensor
             from sensors.ultrasonic import UltrasonicSensor
             from sensors.mpu6050 import MPU6050Sensor
             from sensors.dpdt_mode_switch import ModeSwitch
             from sensors.pet_presence import PetPresenceDetector
+            from sensors.danger_detector import DangerDetector
+            from sensors.environment_locator import EnvironmentLocator
+            from sensors.companion_context import CompanionContext
             self.sensor_modules = [
                 PIRSensor(self.cfg, self.bus),
                 UltrasonicSensor(self.cfg, self.bus),
                 MPU6050Sensor(self.cfg, self.bus),
                 ModeSwitch(self.cfg, self.bus),
                 PetPresenceDetector(self.cfg, self.bus),
+                DangerDetector(self.cfg, self.bus),
+                EnvironmentLocator(self.cfg, self.bus),
+                CompanionContext(self.cfg, self.bus),
             ]
         for module in self.sensor_modules:
             module.start()
@@ -123,6 +144,25 @@ class Companion:
         self.memory = MemoryManager(self.cfg, self.bus)
         self.memory.start()
 
+        # --- commitments (things you said you'd do — Pebble holds you to) --
+        from memory.db_commitments import CommitmentsDB
+        from brain.commitment_watchdog import CommitmentWatchdog
+        self.commitments_db = CommitmentsDB(self.cfg)
+        self.commitments_db.connect()
+        self.commitment_watchdog = CommitmentWatchdog(self.cfg, self.bus, self.commitments_db)
+        self.commitment_watchdog.start()
+
+        # --- entity resolution (naming/acquisition, clarifying questions) --
+        from memory.db_entities import EntitiesDB
+        from memory.db_open_questions import OpenQuestionsDB
+        from brain.entity_resolver import EntityResolver
+        self.entities_db = EntitiesDB(self.cfg)
+        self.entities_db.connect()
+        self.open_questions_db = OpenQuestionsDB(self.cfg)
+        self.open_questions_db.connect()
+        self.entity_resolver = EntityResolver(self.cfg, self.bus, self.entities_db, self.open_questions_db)
+        self.entity_resolver.start()
+
         # --- voice -----------------------------------------------------------
         from voice.vad import VoiceActivityDetector
         self.voice = VoiceActivityDetector(self.cfg, self.bus)
@@ -138,8 +178,19 @@ class Companion:
         for component in self.network.values():
             component.start()
 
+
+        # --- TEMPORARY: visible heartbeat so you can see the bus is alive ---
         self.bus.publish(Event(topic="system.boot_complete", urgency=0.2, source="main"))
         self.log.info("Boot complete.")
+
+        # Verbose event echo is opt-in via config (operating_mode.debug.
+        # verbose_event_log) rather than always-on, so normal runs aren't
+        # flooded with every ambient event.
+        if self.cfg["operating_mode"]["debug"]["verbose_event_log"]:
+            def _debug_log_all_events(event):
+                self.log.info("EVENT  topic=%-28s urgency=%.2f source=%s payload=%s",
+                              event.topic, event.urgency, event.source, event.payload)
+            self.bus.subscribe("*", _debug_log_all_events)
 
     def run_forever(self) -> None:
         self._running = True
@@ -158,6 +209,10 @@ class Companion:
     def shutdown(self) -> None:
         self.log.info("Shutting down gracefully...")
         self.bus.publish(Event(topic="system.shutdown", urgency=0.4, source="main"))
+        if self.commitment_watchdog is not None:
+            self.commitment_watchdog.stop()
+        if self.entity_resolver is not None:
+            self.entity_resolver.stop()
         self.bus.stop()
         # SENSOR INPUT HOOK: real hardware modules should release GPIO/I2C
         # handles here (mock modules no-op).

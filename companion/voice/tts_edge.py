@@ -29,9 +29,22 @@ class EdgeTTS:
 
     def start(self) -> None:
         self.bus.subscribe("brain.response_ready", self._on_response_ready)
-
+        self.bus.subscribe("danger.escalation_stage", self._on_danger_stage)
     def stop(self) -> None:
         pass
+
+    def _on_danger_stage(self, event: Event) -> None:
+        # Deliberately NOT routed through the LLM — a real animal's warning
+        # sound is instant and reflexive, not composed. Fixed phrase bank
+        # keyed by pattern/stage, so this fires with zero LLM latency.
+        phrase_bank = {
+            "chirp_alert": "Hey — back off.",
+            "loud_distress": "Get away from her! Go on, get back!",
+            "sos_loop": "STOP! Away! Away now!",
+        }
+        pattern = event.payload.get("pattern", "chirp_alert")
+        text = phrase_bank.get(pattern, "Back off!")
+        self.speak(text, person_key=None)
 
     def _on_response_ready(self, event: Event) -> None:
         text = event.payload.get("text", "")

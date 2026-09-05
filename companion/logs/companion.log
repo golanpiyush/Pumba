@@ -1,0 +1,899 @@
+2026-09-05 14:25:02,429 [INFO] companion.main: Booting Pebble...
+2026-09-05 14:26:22,100 [INFO] companion.main: Booting Pebble...
+2026-09-05 14:26:22,266 [INFO] companion.main: Boot complete.
+2026-09-05 14:29:16,161 [INFO] companion.main: Booting Pumba...
+2026-09-05 14:29:16,192 [INFO] companion.main: Boot complete.
+2026-09-05 14:29:22,169 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 14:29:22,173 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 14:29:22,173 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 14:29:26,194 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:29:26,897 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 108.5}
+2026-09-05 14:29:36,193 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:29:38,758 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 14:29:38,759 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 14:29:38,759 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 14:29:46,193 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:29:50,630 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 56.1}
+2026-09-05 14:29:56,194 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:29:58,526 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 14:29:58,529 [INFO] companion.main: EVENT  topic=expression.acknowledge_dog   urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 14:29:58,529 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'cautious_on_dog_activity'}
+2026-09-05 14:30:04,861 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 19.7}
+2026-09-05 14:30:06,194 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:30:10,641 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 14:30:10,641 [INFO] companion.main: EVENT  topic=expression.acknowledge_dog   urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 14:30:10,641 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'cautious_on_dog_activity'}
+2026-09-05 14:30:16,195 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:30:21,296 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 14:30:21,300 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 14:30:21,300 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 14:30:26,198 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:30:28,409 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 14:30:28,409 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 14:30:28,409 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 14:30:36,196 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:30:36,250 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 14:30:36,251 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 14:30:36,251 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 14:30:46,196 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:30:46,595 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 14:30:46,596 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 14:30:46,596 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 14:30:52,530 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 14:30:52,530 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 14:30:52,530 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 14:30:56,197 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:31:02,588 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 14:31:02,589 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 14:31:02,589 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 14:31:06,197 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:31:10,726 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 14:31:10,726 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 14:31:10,727 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 14:31:15,747 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 14:31:15,747 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 14:31:15,747 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 14:31:16,198 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:31:25,994 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 14:31:25,994 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 14:31:25,995 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 14:31:26,198 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:31:31,184 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 53.6}
+2026-09-05 14:31:36,199 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:31:40,236 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 14:31:40,237 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 14:31:40,237 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 14:31:46,200 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:31:46,553 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 14:31:46,558 [INFO] companion.main: EVENT  topic=expression.acknowledge_dog   urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 14:31:46,560 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'cautious_on_dog_activity'}
+2026-09-05 14:31:55,163 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 14:31:55,166 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 14:31:55,166 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 14:31:56,204 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:32:05,851 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 14:32:05,851 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 14:32:05,851 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 14:32:06,201 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:32:12,826 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 17.5}
+2026-09-05 14:32:16,202 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:32:19,881 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 14:32:19,881 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 14:32:19,882 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 14:32:26,203 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:32:29,787 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 117.1}
+2026-09-05 14:32:36,204 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:32:38,303 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 14:32:38,303 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 14:32:38,303 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 14:32:46,205 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:32:48,561 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 59.2}
+2026-09-05 14:32:53,089 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 14:32:53,089 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 14:32:53,090 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 14:32:56,205 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:33:03,191 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 14:33:03,191 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 14:33:03,191 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 14:33:06,206 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:33:06,321 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 14:33:06,331 [INFO] companion.main: EVENT  topic=expression.acknowledge_dog   urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 14:33:06,336 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'cautious_on_dog_activity'}
+2026-09-05 14:33:12,646 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 14:33:12,648 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 14:33:12,648 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 14:33:16,210 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:33:16,729 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 42.8}
+2026-09-05 14:33:21,834 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 14:33:21,837 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 14:33:21,838 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 14:33:26,208 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:33:27,863 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 14:33:27,863 [INFO] companion.main: EVENT  topic=mood.changed                 urgency=0.10 source=mood_engine payload={'mood': 'excited', 'valence': 0.7301841366464471, 'arousal': 0.8475107687961078}
+2026-09-05 14:33:27,865 [INFO] companion.main: EVENT  topic=expression.acknowledge_dog   urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 14:33:27,865 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'cautious_on_dog_activity'}
+2026-09-05 14:33:33,162 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 84.9}
+2026-09-05 14:33:36,212 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:33:37,902 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 14:33:37,903 [INFO] companion.main: EVENT  topic=expression.acknowledge_dog   urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 14:33:37,903 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'cautious_on_dog_activity'}
+2026-09-05 14:33:46,209 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:33:47,798 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 74.5}
+2026-09-05 14:33:56,209 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:33:57,956 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 112.2}
+2026-09-05 14:34:06,011 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 14:34:06,014 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 14:34:06,014 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 14:34:06,210 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:34:11,508 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 10.0}
+2026-09-05 14:34:16,126 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 14:34:16,127 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 14:34:16,127 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 14:34:16,210 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:34:26,210 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:34:26,978 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 14:34:26,982 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 14:34:26,982 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 14:34:35,544 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 126.5}
+2026-09-05 14:34:36,214 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:34:45,893 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 14:34:45,894 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 14:34:45,894 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 14:34:46,212 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:34:56,212 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:34:56,328 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 14:34:56,328 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 14:34:56,329 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 14:35:00,402 [INFO] companion.main: EVENT  topic=mood.changed                 urgency=0.10 source=mood_engine payload={'mood': 'curious', 'valence': 0.720711957280839, 'arousal': 0.7491903538868347}
+2026-09-05 14:35:02,848 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 38.1}
+2026-09-05 14:35:06,213 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:35:13,595 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 14:35:13,599 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 14:35:13,599 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 14:35:16,214 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:35:18,136 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 14:35:18,136 [INFO] companion.main: EVENT  topic=mood.changed                 urgency=0.10 source=mood_engine payload={'mood': 'excited', 'valence': 0.7397623755653451, 'arousal': 0.8502021572074921}
+2026-09-05 14:35:18,140 [INFO] companion.main: EVENT  topic=expression.acknowledge_dog   urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 14:35:18,140 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'cautious_on_dog_activity'}
+2026-09-05 14:35:21,463 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 14:35:21,464 [INFO] companion.main: EVENT  topic=expression.acknowledge_dog   urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 14:35:21,465 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'cautious_on_dog_activity'}
+2026-09-05 14:35:26,217 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:35:28,728 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 14:35:28,732 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 14:35:28,732 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 14:35:36,215 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:35:37,198 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 14:35:37,201 [INFO] companion.main: EVENT  topic=expression.acknowledge_dog   urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 14:35:37,201 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'cautious_on_dog_activity'}
+2026-09-05 14:35:44,898 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 14:35:44,899 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 14:35:44,899 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 14:35:46,219 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:35:52,495 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 95.8}
+2026-09-05 14:35:55,523 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 14:35:55,530 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 14:35:55,531 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 14:35:56,217 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:36:04,598 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 14:36:04,604 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 14:36:04,604 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 14:36:06,221 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:36:11,715 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 106.6}
+2026-09-05 14:36:16,218 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 14:36:19,532 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 39.8}
+2026-09-05 14:36:22,773 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 14:36:22,773 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 14:36:22,774 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 15:17:28,004 [INFO] companion.main: Booting Pumba...
+2026-09-05 15:18:50,647 [INFO] companion.main: Booting Pumba...
+2026-09-05 15:18:57,066 [INFO] companion.main: Booting Pumba...
+2026-09-05 15:19:50,592 [INFO] companion.main: Booting Pumba...
+2026-09-05 15:19:50,637 [INFO] companion.main: Boot complete.
+2026-09-05 15:19:50,638 [INFO] companion.main: Boot complete.
+2026-09-05 15:19:58,799 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:19:58,802 [INFO] companion.main: EVENT  topic=context.companion_changed    urgency=0.15 source=companion_context payload={'companion': 'dog', 'confidence': 0.6, 'signal_source': 'physical'}
+2026-09-05 15:19:58,806 [INFO] companion.main: EVENT  topic=expression.acknowledge_dog   urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:19:58,806 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'cautious_on_dog_activity'}
+2026-09-05 15:20:00,641 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:20:02,731 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:20:02,739 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:20:02,739 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:20:15,447 [INFO] companion.main: Booting Pumba...
+2026-09-05 15:20:15,481 [INFO] companion.main: Boot complete.
+2026-09-05 15:20:25,482 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:20:25,849 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:20:25,853 [INFO] companion.main: EVENT  topic=context.companion_changed    urgency=0.15 source=companion_context payload={'companion': 'bird', 'confidence': 0.6, 'signal_source': 'physical'}
+2026-09-05 15:20:25,858 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:20:25,870 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 15:20:31,838 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:20:31,839 [INFO] companion.main: EVENT  topic=context.companion_changed    urgency=0.15 source=companion_context payload={'companion': 'dog', 'confidence': 0.6, 'signal_source': 'physical'}
+2026-09-05 15:20:31,842 [INFO] companion.main: EVENT  topic=expression.acknowledge_dog   urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:20:31,843 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'cautious_on_dog_activity'}
+2026-09-05 15:20:35,487 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:20:36,291 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:20:36,292 [INFO] companion.main: EVENT  topic=expression.acknowledge_dog   urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:20:36,292 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'cautious_on_dog_activity'}
+2026-09-05 15:20:45,453 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 98, 'voltage': 4.184999649524689}
+2026-09-05 15:20:45,484 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:20:46,978 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:20:46,981 [INFO] companion.main: EVENT  topic=context.companion_changed    urgency=0.15 source=companion_context payload={'companion': 'bird', 'confidence': 0.6, 'signal_source': 'physical'}
+2026-09-05 15:20:46,982 [INFO] companion.main: EVENT  topic=mood.changed                 urgency=0.10 source=mood_engine payload={'mood': 'excited', 'valence': 0.7704401756713157, 'arousal': 0.8065172265772624}
+2026-09-05 15:20:46,986 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:20:46,986 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 15:20:55,487 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:20:55,714 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:20:55,715 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:20:55,716 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 15:21:05,485 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:21:05,516 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 86.3}
+2026-09-05 15:21:09,518 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 49.3}
+2026-09-05 15:21:15,453 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 97, 'voltage': 4.169999261140823}
+2026-09-05 15:21:15,486 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:21:19,731 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:21:19,735 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:21:19,736 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:21:23,476 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 28.7}
+2026-09-05 15:21:23,479 [INFO] companion.main: EVENT  topic=environment.location_changed urgency=0.20 source=environment_locator payload={'location': 'desk'}
+2026-09-05 15:21:25,489 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:21:31,506 [INFO] companion.main: EVENT  topic=mood.changed                 urgency=0.10 source=mood_engine payload={'mood': 'curious', 'valence': 0.7665034057235574, 'arousal': 0.7485922549667781}
+2026-09-05 15:21:33,572 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:21:33,573 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:21:33,573 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:21:35,486 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:21:43,374 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:21:43,374 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:21:43,375 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:21:45,452 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 95, 'voltage': 4.154998807668686}
+2026-09-05 15:21:45,487 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:21:52,948 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:21:52,949 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:21:52,949 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:21:55,487 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:21:59,013 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:21:59,017 [INFO] companion.main: EVENT  topic=context.companion_changed    urgency=0.15 source=companion_context payload={'companion': 'dog', 'confidence': 0.6, 'signal_source': 'physical'}
+2026-09-05 15:21:59,017 [INFO] companion.main: EVENT  topic=mood.changed                 urgency=0.10 source=mood_engine payload={'mood': 'excited', 'valence': 0.7658554101182458, 'arousal': 0.8237575142658015}
+2026-09-05 15:21:59,021 [INFO] companion.main: EVENT  topic=expression.acknowledge_dog   urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:21:59,021 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'cautious_on_dog_activity'}
+2026-09-05 15:22:05,488 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:22:06,044 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 120.2}
+2026-09-05 15:22:15,454 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 93, 'voltage': 4.139998592495918}
+2026-09-05 15:22:15,492 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:22:16,177 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:22:16,182 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:22:16,184 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:22:20,532 [INFO] companion.main: EVENT  topic=mood.changed                 urgency=0.10 source=mood_engine payload={'mood': 'curious', 'valence': 0.7322123578864232, 'arousal': 0.7499180455726997}
+2026-09-05 15:22:25,489 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:22:25,988 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 33.5}
+2026-09-05 15:22:31,014 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:22:31,014 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:22:31,014 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:22:35,490 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:22:42,437 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:22:42,441 [INFO] companion.main: EVENT  topic=context.companion_changed    urgency=0.15 source=companion_context payload={'companion': 'bird', 'confidence': 0.6, 'signal_source': 'physical'}
+2026-09-05 15:22:42,443 [INFO] companion.main: EVENT  topic=mood.changed                 urgency=0.10 source=mood_engine payload={'mood': 'excited', 'valence': 0.785002069173405, 'arousal': 0.7901971484403437}
+2026-09-05 15:22:42,452 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:22:42,453 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 15:22:45,455 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 92, 'voltage': 4.124998406171799}
+2026-09-05 15:22:45,492 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:22:49,612 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:22:49,612 [INFO] companion.main: EVENT  topic=context.companion_changed    urgency=0.15 source=companion_context payload={'companion': 'dog', 'confidence': 0.6, 'signal_source': 'physical'}
+2026-09-05 15:22:49,615 [INFO] companion.main: EVENT  topic=expression.acknowledge_dog   urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:22:49,615 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'cautious_on_dog_activity'}
+2026-09-05 15:22:55,490 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:22:56,468 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:22:56,472 [INFO] companion.main: EVENT  topic=context.companion_changed    urgency=0.15 source=companion_context payload={'companion': 'bird', 'confidence': 0.6, 'signal_source': 'physical'}
+2026-09-05 15:22:56,475 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:22:56,475 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 15:23:05,098 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:23:05,098 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:23:05,098 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 15:23:05,493 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:23:12,981 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 140.9}
+2026-09-05 15:23:15,455 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 90, 'voltage': 4.10999814581871}
+2026-09-05 15:23:15,492 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:23:18,984 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 104.0}
+2026-09-05 15:23:23,965 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:23:23,969 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:23:23,970 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:23:25,492 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:23:28,000 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 130.9}
+2026-09-05 15:23:35,313 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 105.8}
+2026-09-05 15:23:35,492 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:23:44,782 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:23:44,782 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:23:44,782 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:23:45,453 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 88, 'voltage': 4.094997887611389}
+2026-09-05 15:23:45,501 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:23:49,483 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:23:49,485 [INFO] companion.main: EVENT  topic=context.companion_changed    urgency=0.15 source=companion_context payload={'companion': 'dog', 'confidence': 0.6, 'signal_source': 'physical'}
+2026-09-05 15:23:49,489 [INFO] companion.main: EVENT  topic=expression.acknowledge_dog   urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:23:49,489 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'cautious_on_dog_activity'}
+2026-09-05 15:23:55,504 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:23:57,301 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:23:57,302 [INFO] companion.main: EVENT  topic=context.companion_changed    urgency=0.15 source=companion_context payload={'companion': 'bird', 'confidence': 0.6, 'signal_source': 'physical'}
+2026-09-05 15:23:57,305 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:23:57,307 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 15:24:05,502 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:24:05,649 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 86.0}
+2026-09-05 15:24:15,457 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 87, 'voltage': 4.079997568964958}
+2026-09-05 15:24:15,504 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:24:16,584 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:24:16,591 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:24:16,591 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 15:24:25,508 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:24:27,205 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:24:27,209 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:24:27,210 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:24:35,507 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:24:38,020 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:24:38,022 [INFO] companion.main: EVENT  topic=context.companion_changed    urgency=0.15 source=companion_context payload={'companion': 'dog', 'confidence': 0.6, 'signal_source': 'physical'}
+2026-09-05 15:24:38,026 [INFO] companion.main: EVENT  topic=expression.acknowledge_dog   urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:24:38,026 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'cautious_on_dog_activity'}
+2026-09-05 15:24:43,577 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:24:43,578 [INFO] companion.main: EVENT  topic=expression.acknowledge_dog   urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:24:43,578 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'cautious_on_dog_activity'}
+2026-09-05 15:24:45,457 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 85, 'voltage': 4.064997503399849}
+2026-09-05 15:24:45,512 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:24:50,047 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:24:50,050 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:24:50,051 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:24:55,508 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:25:00,027 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 46.1}
+2026-09-05 15:25:05,009 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:25:05,009 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:25:05,009 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:25:05,509 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:25:12,371 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:25:12,373 [INFO] companion.main: EVENT  topic=context.companion_changed    urgency=0.15 source=companion_context payload={'companion': 'bird', 'confidence': 0.6, 'signal_source': 'physical'}
+2026-09-05 15:25:12,375 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:25:12,375 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 15:25:15,457 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 83, 'voltage': 4.049997402429581}
+2026-09-05 15:25:15,512 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:25:18,259 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:25:18,263 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:25:18,263 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:25:25,511 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:25:28,184 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:25:28,184 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:25:28,185 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:25:32,667 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:25:32,668 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:25:32,668 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:25:35,511 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:25:42,133 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:25:42,133 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:25:42,133 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:25:45,455 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 82, 'voltage': 4.034996958374977}
+2026-09-05 15:25:45,512 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:25:53,652 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:25:53,655 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:25:53,655 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 15:25:55,512 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:26:04,326 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:26:04,327 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:26:04,327 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 15:26:05,516 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:26:08,844 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:26:08,849 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:26:08,850 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:26:15,458 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 80, 'voltage': 4.019996820569038}
+2026-09-05 15:26:15,513 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:26:19,767 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 127.6}
+2026-09-05 15:26:25,514 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:26:27,568 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:26:27,575 [INFO] companion.main: EVENT  topic=context.companion_changed    urgency=0.15 source=companion_context payload={'companion': 'dog', 'confidence': 0.6, 'signal_source': 'physical'}
+2026-09-05 15:26:27,579 [INFO] companion.main: EVENT  topic=expression.acknowledge_dog   urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:26:27,581 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'cautious_on_dog_activity'}
+2026-09-05 15:26:34,357 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:26:34,358 [INFO] companion.main: EVENT  topic=context.companion_changed    urgency=0.15 source=companion_context payload={'companion': 'bird', 'confidence': 0.6, 'signal_source': 'physical'}
+2026-09-05 15:26:34,361 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:26:34,361 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 15:26:35,516 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:26:38,655 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 108.7}
+2026-09-05 15:26:45,460 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 78, 'voltage': 4.004996633768082}
+2026-09-05 15:26:45,515 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:26:49,545 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:26:49,549 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:26:49,550 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:26:55,515 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:26:56,375 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:26:56,377 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:26:56,378 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 15:27:03,836 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:27:03,836 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:27:03,836 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 15:27:05,519 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:27:09,842 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:27:09,844 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:27:09,844 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:27:14,902 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 17.1}
+2026-09-05 15:27:15,460 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 77, 'voltage': 3.9899963561296463}
+2026-09-05 15:27:15,516 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:27:23,462 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 74.3}
+2026-09-05 15:27:25,517 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:27:32,478 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:27:32,483 [INFO] companion.main: EVENT  topic=context.companion_changed    urgency=0.15 source=companion_context payload={'companion': 'dog', 'confidence': 0.6, 'signal_source': 'physical'}
+2026-09-05 15:27:32,496 [INFO] companion.main: EVENT  topic=expression.acknowledge_dog   urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:27:32,498 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'cautious_on_dog_activity'}
+2026-09-05 15:27:35,520 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:27:35,742 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:27:35,744 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:27:35,744 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:27:40,756 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 18.0}
+2026-09-05 15:27:45,460 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 75, 'voltage': 3.9749960285425185}
+2026-09-05 15:27:45,518 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:27:50,806 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:27:50,809 [INFO] companion.main: EVENT  topic=context.companion_changed    urgency=0.15 source=companion_context payload={'companion': 'bird', 'confidence': 0.6, 'signal_source': 'physical'}
+2026-09-05 15:27:50,811 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:27:50,811 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 15:27:54,842 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:27:54,844 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:27:54,844 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:27:55,522 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:28:05,519 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:28:05,722 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 142.4}
+2026-09-05 15:28:15,461 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 73, 'voltage': 3.9599957517385485}
+2026-09-05 15:28:15,521 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:28:17,256 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:28:17,258 [INFO] companion.main: EVENT  topic=context.companion_changed    urgency=0.15 source=companion_context payload={'companion': 'dog', 'confidence': 0.6, 'signal_source': 'physical'}
+2026-09-05 15:28:17,261 [INFO] companion.main: EVENT  topic=expression.acknowledge_dog   urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:28:17,261 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'cautious_on_dog_activity'}
+2026-09-05 15:28:22,084 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:28:22,088 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:28:22,088 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:28:25,524 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:28:33,004 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:28:33,009 [INFO] companion.main: EVENT  topic=context.companion_changed    urgency=0.15 source=companion_context payload={'companion': 'bird', 'confidence': 0.6, 'signal_source': 'physical'}
+2026-09-05 15:28:33,014 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:28:33,016 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 15:28:35,522 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:28:37,936 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 40.7}
+2026-09-05 15:28:41,339 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:28:41,343 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:28:41,343 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:28:44,602 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 102.6}
+2026-09-05 15:28:45,463 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 72, 'voltage': 3.9449952318668364}
+2026-09-05 15:28:45,526 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:28:49,971 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 85.6}
+2026-09-05 15:28:55,523 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:28:59,884 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:28:59,887 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:28:59,887 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 15:29:04,600 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:29:04,605 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:29:04,606 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 15:29:05,523 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:29:15,461 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 70, 'voltage': 3.9299943554401398}
+2026-09-05 15:29:15,524 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:29:16,243 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 68.3}
+2026-09-05 15:29:21,941 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 101.3}
+2026-09-05 15:29:25,524 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:29:28,490 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:29:28,493 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:29:28,494 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:29:35,527 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:29:35,574 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:29:35,598 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:29:35,605 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 15:29:39,520 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:29:39,524 [INFO] companion.main: EVENT  topic=context.companion_changed    urgency=0.15 source=companion_context payload={'companion': 'dog', 'confidence': 0.6, 'signal_source': 'physical'}
+2026-09-05 15:29:39,528 [INFO] companion.main: EVENT  topic=expression.acknowledge_dog   urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:29:39,535 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'cautious_on_dog_activity'}
+2026-09-05 15:29:43,938 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 55.3}
+2026-09-05 15:29:45,464 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 68, 'voltage': 3.914993962645531}
+2026-09-05 15:29:45,528 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:29:51,537 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:29:51,541 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:29:51,541 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:29:55,108 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:29:55,108 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:29:55,108 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:29:55,525 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:30:04,425 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:30:04,430 [INFO] companion.main: EVENT  topic=expression.acknowledge_dog   urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:30:04,431 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'cautious_on_dog_activity'}
+2026-09-05 15:30:05,526 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:30:15,391 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 137.4}
+2026-09-05 15:30:15,466 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 67, 'voltage': 3.8999935559034347}
+2026-09-05 15:30:15,532 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:30:19,136 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 129.8}
+2026-09-05 15:30:25,528 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:30:28,256 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:30:28,257 [INFO] companion.main: EVENT  topic=expression.acknowledge_dog   urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:30:28,257 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'cautious_on_dog_activity'}
+2026-09-05 15:30:33,582 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 17.4}
+2026-09-05 15:30:35,528 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:30:39,441 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:30:39,444 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:30:39,444 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:30:45,462 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 65, 'voltage': 3.8849934277534484}
+2026-09-05 15:30:45,529 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:30:48,931 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:30:48,932 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:30:48,932 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:30:55,034 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:30:55,035 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:30:55,035 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:30:55,530 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:31:04,721 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 27.5}
+2026-09-05 15:31:05,530 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:31:13,642 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 145.0}
+2026-09-05 15:31:15,466 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 63, 'voltage': 3.8699932211637496}
+2026-09-05 15:31:15,535 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:31:20,548 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:31:20,551 [INFO] companion.main: EVENT  topic=expression.acknowledge_dog   urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:31:20,551 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'cautious_on_dog_activity'}
+2026-09-05 15:31:25,531 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:31:31,011 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 60.7}
+2026-09-05 15:31:35,531 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:31:39,965 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:31:39,966 [INFO] companion.main: EVENT  topic=expression.acknowledge_dog   urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:31:39,966 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'cautious_on_dog_activity'}
+2026-09-05 15:31:44,294 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:31:44,300 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:31:44,302 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:31:45,465 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 62, 'voltage': 3.8549930369853973}
+2026-09-05 15:31:45,535 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:31:49,832 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:31:49,833 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:31:49,833 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:31:55,532 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:31:55,823 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:31:55,827 [INFO] companion.main: EVENT  topic=expression.acknowledge_dog   urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:31:55,827 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'cautious_on_dog_activity'}
+2026-09-05 15:32:01,414 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 106.1}
+2026-09-05 15:32:05,533 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:32:12,182 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 80.1}
+2026-09-05 15:32:15,464 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 60, 'voltage': 3.8399927880764007}
+2026-09-05 15:32:15,533 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:32:21,329 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 127.1}
+2026-09-05 15:32:25,534 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:32:26,989 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:32:26,990 [INFO] companion.main: EVENT  topic=expression.acknowledge_dog   urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:32:26,990 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'cautious_on_dog_activity'}
+2026-09-05 15:32:35,184 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:32:35,191 [INFO] companion.main: EVENT  topic=context.companion_changed    urgency=0.15 source=companion_context payload={'companion': 'bird', 'confidence': 0.6, 'signal_source': 'physical'}
+2026-09-05 15:32:35,195 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:32:35,196 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 15:32:35,539 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:32:45,434 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:32:45,437 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:32:45,437 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:32:45,466 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 58, 'voltage': 3.824992513895035}
+2026-09-05 15:32:45,539 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:32:48,689 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:32:48,690 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:32:48,690 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:32:55,539 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:32:59,112 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:32:59,113 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:32:59,113 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:33:03,336 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:33:03,336 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:33:03,337 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:33:05,540 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:33:15,221 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 75.7}
+2026-09-05 15:33:15,465 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 57, 'voltage': 3.8099921953678133}
+2026-09-05 15:33:15,540 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:33:18,905 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:33:18,908 [INFO] companion.main: EVENT  topic=context.companion_changed    urgency=0.15 source=companion_context payload={'companion': 'dog', 'confidence': 0.6, 'signal_source': 'physical'}
+2026-09-05 15:33:18,910 [INFO] companion.main: EVENT  topic=expression.acknowledge_dog   urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:33:18,911 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'cautious_on_dog_activity'}
+2026-09-05 15:33:25,543 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:33:27,639 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:33:27,640 [INFO] companion.main: EVENT  topic=context.companion_changed    urgency=0.15 source=companion_context payload={'companion': 'bird', 'confidence': 0.6, 'signal_source': 'physical'}
+2026-09-05 15:33:27,642 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:33:27,642 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 15:33:34,968 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:33:34,974 [INFO] companion.main: EVENT  topic=context.companion_changed    urgency=0.15 source=companion_context payload={'companion': 'dog', 'confidence': 0.6, 'signal_source': 'physical'}
+2026-09-05 15:33:34,978 [INFO] companion.main: EVENT  topic=expression.acknowledge_dog   urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:33:34,979 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'cautious_on_dog_activity'}
+2026-09-05 15:33:35,549 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:33:45,468 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 55, 'voltage': 3.7949919830560686}
+2026-09-05 15:33:45,546 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:33:46,741 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:33:46,742 [INFO] companion.main: EVENT  topic=context.companion_changed    urgency=0.15 source=companion_context payload={'companion': 'bird', 'confidence': 0.6, 'signal_source': 'physical'}
+2026-09-05 15:33:46,744 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:33:46,744 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 15:33:54,972 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:33:54,973 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:33:54,973 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 15:33:55,547 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:33:59,965 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:33:59,969 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:33:59,969 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:34:05,550 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:34:08,600 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:34:08,601 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:34:08,601 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:34:15,469 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 53, 'voltage': 3.779991645336151}
+2026-09-05 15:34:15,548 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:34:15,701 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:34:15,704 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:34:15,705 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 15:34:25,549 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:34:26,013 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 56.2}
+2026-09-05 15:34:33,033 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:34:33,038 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:34:33,038 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 15:34:35,553 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:34:36,154 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:34:36,158 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:34:36,159 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:34:45,469 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 52, 'voltage': 3.7649914076328277}
+2026-09-05 15:34:45,551 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:34:46,236 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 79.1}
+2026-09-05 15:34:55,013 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:34:55,016 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:34:55,017 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 15:34:55,558 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:34:58,724 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:34:58,727 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:34:58,727 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:35:05,552 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:35:06,222 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:35:06,223 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:35:06,224 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:35:12,640 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:35:12,641 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:35:12,642 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:35:15,469 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 50, 'voltage': 3.7499912400245665}
+2026-09-05 15:35:15,553 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:35:19,681 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:35:19,682 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:35:19,682 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:35:25,554 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:35:27,555 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:35:27,559 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:35:27,560 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 15:35:35,557 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:35:36,182 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:35:36,189 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:35:36,190 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:35:42,248 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:35:42,249 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:35:42,249 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 15:35:45,471 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 48, 'voltage': 3.73499074113369}
+2026-09-05 15:35:45,555 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:35:53,160 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 140.8}
+2026-09-05 15:35:55,558 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:35:57,751 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 108.5}
+2026-09-05 15:36:05,556 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:36:07,199 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:36:07,201 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:36:07,201 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:36:14,852 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:36:14,853 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:36:14,853 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:36:15,469 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 47, 'voltage': 3.7199903638362883}
+2026-09-05 15:36:15,557 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:36:22,951 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:36:22,951 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:36:22,951 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:36:25,557 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:36:33,257 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:36:33,258 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:36:33,258 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:36:35,558 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:36:37,839 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 113.5}
+2026-09-05 15:36:44,000 [INFO] companion.main: EVENT  topic=mood.changed                 urgency=0.10 source=mood_engine payload={'mood': 'curious', 'valence': 0.8291491402069273, 'arousal': 0.747491495995998}
+2026-09-05 15:36:44,910 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:36:44,911 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:36:44,911 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:36:45,469 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 45, 'voltage': 3.7049901732206343}
+2026-09-05 15:36:45,559 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:36:55,560 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:36:55,979 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:36:55,979 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:36:55,979 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:37:05,560 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:37:06,991 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:37:06,992 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:37:06,992 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:37:11,801 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:37:11,801 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:37:11,802 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:37:15,469 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 43, 'voltage': 3.6899899578094484}
+2026-09-05 15:37:15,562 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:37:20,164 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:37:20,168 [INFO] companion.main: EVENT  topic=context.companion_changed    urgency=0.15 source=companion_context payload={'companion': 'dog', 'confidence': 0.6, 'signal_source': 'physical'}
+2026-09-05 15:37:20,169 [INFO] companion.main: EVENT  topic=mood.changed                 urgency=0.10 source=mood_engine payload={'mood': 'excited', 'valence': 0.8015554881693869, 'arousal': 0.8012422227640683}
+2026-09-05 15:37:20,172 [INFO] companion.main: EVENT  topic=expression.acknowledge_dog   urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:37:20,173 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'cautious_on_dog_activity'}
+2026-09-05 15:37:25,564 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:37:27,215 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:37:27,219 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:37:27,219 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:37:32,414 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:37:32,414 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:37:32,414 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:37:35,562 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:37:35,897 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:37:35,897 [INFO] companion.main: EVENT  topic=expression.acknowledge_dog   urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:37:35,898 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'cautious_on_dog_activity'}
+2026-09-05 15:37:45,473 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 42, 'voltage': 3.674989821434021}
+2026-09-05 15:37:45,563 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:37:45,921 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:37:45,926 [INFO] companion.main: EVENT  topic=expression.acknowledge_dog   urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:37:45,927 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'cautious_on_dog_activity'}
+2026-09-05 15:37:53,436 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:37:53,441 [INFO] companion.main: EVENT  topic=context.companion_changed    urgency=0.15 source=companion_context payload={'companion': 'bird', 'confidence': 0.6, 'signal_source': 'physical'}
+2026-09-05 15:37:53,454 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:37:53,458 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 15:37:55,566 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:38:03,949 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:38:03,953 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:38:03,953 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:38:05,564 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:38:08,279 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:38:08,282 [INFO] companion.main: EVENT  topic=context.companion_changed    urgency=0.15 source=companion_context payload={'companion': 'dog', 'confidence': 0.6, 'signal_source': 'physical'}
+2026-09-05 15:38:08,284 [INFO] companion.main: EVENT  topic=expression.acknowledge_dog   urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:38:08,284 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'cautious_on_dog_activity'}
+2026-09-05 15:38:12,553 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:38:12,553 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:38:12,553 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:38:15,473 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 40, 'voltage': 3.6599895634651185}
+2026-09-05 15:38:15,566 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:38:17,123 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:38:17,123 [INFO] companion.main: EVENT  topic=context.companion_changed    urgency=0.15 source=companion_context payload={'companion': 'bird', 'confidence': 0.6, 'signal_source': 'physical'}
+2026-09-05 15:38:17,126 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:38:17,126 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 15:38:25,134 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:38:25,136 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:38:25,137 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:38:25,565 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:38:32,435 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:38:32,435 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:38:32,435 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:38:35,565 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:38:38,962 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:38:38,962 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:38:38,963 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:38:42,015 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:38:42,016 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:38:42,016 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 15:38:45,473 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 38, 'voltage': 3.6449893293380735}
+2026-09-05 15:38:45,568 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:38:52,311 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 27.7}
+2026-09-05 15:38:55,566 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:38:58,370 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:38:58,374 [INFO] companion.main: EVENT  topic=context.companion_changed    urgency=0.15 source=companion_context payload={'companion': 'dog', 'confidence': 0.6, 'signal_source': 'physical'}
+2026-09-05 15:38:58,377 [INFO] companion.main: EVENT  topic=expression.acknowledge_dog   urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:38:58,377 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'cautious_on_dog_activity'}
+2026-09-05 15:39:03,530 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:39:03,535 [INFO] companion.main: EVENT  topic=context.companion_changed    urgency=0.15 source=companion_context payload={'companion': 'bird', 'confidence': 0.6, 'signal_source': 'physical'}
+2026-09-05 15:39:03,539 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:39:03,539 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 15:39:05,569 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:39:12,922 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 94.5}
+2026-09-05 15:39:15,475 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 37, 'voltage': 3.6299890187978745}
+2026-09-05 15:39:15,567 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:39:15,974 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:39:15,975 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:39:15,975 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 15:39:19,857 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:39:19,860 [INFO] companion.main: EVENT  topic=context.companion_changed    urgency=0.15 source=companion_context payload={'companion': 'dog', 'confidence': 0.6, 'signal_source': 'physical'}
+2026-09-05 15:39:19,862 [INFO] companion.main: EVENT  topic=expression.acknowledge_dog   urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:39:19,863 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'cautious_on_dog_activity'}
+2026-09-05 15:39:23,590 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:39:23,592 [INFO] companion.main: EVENT  topic=expression.acknowledge_dog   urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:39:23,592 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'cautious_on_dog_activity'}
+2026-09-05 15:39:25,569 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:39:29,423 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:39:29,429 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:39:29,430 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:39:32,834 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:39:32,835 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:39:32,835 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:39:35,568 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:39:36,108 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 137.3}
+2026-09-05 15:39:45,036 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 13.9}
+2026-09-05 15:39:45,475 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 35, 'voltage': 3.614988862991333}
+2026-09-05 15:39:45,568 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:39:48,118 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 51.2}
+2026-09-05 15:39:54,134 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 110.7}
+2026-09-05 15:39:55,569 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:40:05,569 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:40:05,577 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:40:05,578 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:40:05,578 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:40:15,472 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 33, 'voltage': 3.5999885029792784}
+2026-09-05 15:40:15,569 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:40:16,831 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:40:16,831 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:40:16,831 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:40:25,570 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:40:26,085 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:40:26,086 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:40:26,086 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:40:27,115 [INFO] companion.main: EVENT  topic=mood.changed                 urgency=0.10 source=mood_engine payload={'mood': 'curious', 'valence': 0.8248822766307233, 'arousal': 0.7470521773554895}
+2026-09-05 15:40:30,106 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 110.5}
+2026-09-05 15:40:35,571 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:40:37,042 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:40:37,045 [INFO] companion.main: EVENT  topic=context.companion_changed    urgency=0.15 source=companion_context payload={'companion': 'bird', 'confidence': 0.6, 'signal_source': 'physical'}
+2026-09-05 15:40:37,045 [INFO] companion.main: EVENT  topic=mood.changed                 urgency=0.10 source=mood_engine payload={'mood': 'excited', 'valence': 0.8864742328852119, 'arousal': 0.8204627808341955}
+2026-09-05 15:40:37,048 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:40:37,048 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 15:40:45,473 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 32, 'voltage': 3.5849881489276885}
+2026-09-05 15:40:45,573 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:40:45,577 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 57.3}
+2026-09-05 15:40:55,571 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:40:57,147 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:40:57,148 [INFO] companion.main: EVENT  topic=context.companion_changed    urgency=0.15 source=companion_context payload={'companion': 'dog', 'confidence': 0.6, 'signal_source': 'physical'}
+2026-09-05 15:40:57,151 [INFO] companion.main: EVENT  topic=expression.acknowledge_dog   urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:40:57,151 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'cautious_on_dog_activity'}
+2026-09-05 15:41:04,998 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:41:05,001 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:41:05,004 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:41:05,574 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:41:14,321 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:41:14,321 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:41:14,322 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:41:15,477 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 30, 'voltage': 3.5699879531860352}
+2026-09-05 15:41:15,578 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:41:25,579 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:41:26,037 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:41:26,037 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:41:26,037 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:41:30,879 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:41:30,881 [INFO] companion.main: EVENT  topic=context.companion_changed    urgency=0.15 source=companion_context payload={'companion': 'bird', 'confidence': 0.6, 'signal_source': 'physical'}
+2026-09-05 15:41:30,886 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:41:30,886 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 15:41:35,579 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:41:41,383 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:41:41,388 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:41:41,388 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:41:45,476 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 28, 'voltage': 3.5549877545833586}
+2026-09-05 15:41:45,585 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:41:52,432 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:41:52,435 [INFO] companion.main: EVENT  topic=context.companion_changed    urgency=0.15 source=companion_context payload={'companion': 'dog', 'confidence': 0.6, 'signal_source': 'physical'}
+2026-09-05 15:41:52,438 [INFO] companion.main: EVENT  topic=expression.acknowledge_dog   urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:41:52,438 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'cautious_on_dog_activity'}
+2026-09-05 15:41:55,582 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:41:59,423 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:41:59,425 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:41:59,425 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:42:05,584 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:42:08,308 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 103.7}
+2026-09-05 15:42:15,478 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 27, 'voltage': 3.539987699627876}
+2026-09-05 15:42:15,583 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:42:15,936 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:42:15,937 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:42:15,937 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:42:21,526 [INFO] companion.main: EVENT  topic=sensor.distance              urgency=0.10 source=mock_sensors payload={'distance_cm': 46.1}
+2026-09-05 15:42:24,801 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:42:24,804 [INFO] companion.main: EVENT  topic=context.companion_changed    urgency=0.15 source=companion_context payload={'companion': 'bird', 'confidence': 0.6, 'signal_source': 'physical'}
+2026-09-05 15:42:24,806 [INFO] companion.main: EVENT  topic=expression.watch_bird        urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'bird', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:42:24,806 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'watch_bird_activity'}
+2026-09-05 15:42:25,585 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:42:35,574 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:42:35,576 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:42:35,576 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:42:35,584 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:42:40,311 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:42:40,311 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:42:40,311 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:42:45,477 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 25, 'voltage': 3.524987637400627}
+2026-09-05 15:42:45,585 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:42:51,558 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:42:51,561 [INFO] companion.main: EVENT  topic=context.companion_changed    urgency=0.15 source=companion_context payload={'companion': 'dog', 'confidence': 0.6, 'signal_source': 'physical'}
+2026-09-05 15:42:51,563 [INFO] companion.main: EVENT  topic=expression.acknowledge_dog   urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:42:51,563 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'cautious_on_dog_activity'}
+2026-09-05 15:42:55,587 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:42:56,914 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:42:56,918 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:42:56,918 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:43:05,586 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:43:06,767 [INFO] companion.main: EVENT  topic=pet.activity_detected        urgency=0.30 source=mock_sensors payload={'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}
+2026-09-05 15:43:06,767 [INFO] companion.main: EVENT  topic=expression.acknowledge_dog   urgency=0.30 source=personality payload={'trigger': 'pet.activity_detected', 'source_payload': {'animal': 'dog', 'confidence': 0.6, 'signal': 'mock'}}
+2026-09-05 15:43:06,768 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'cautious_on_dog_activity'}
+2026-09-05 15:43:11,192 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:43:11,192 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:43:11,193 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:43:15,478 [INFO] companion.main: EVENT  topic=power.battery_level          urgency=0.05 source=power_manager payload={'percent': 23, 'voltage': 3.5099872990846634}
+2026-09-05 15:43:15,586 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}
+2026-09-05 15:43:20,623 [INFO] companion.main: EVENT  topic=sensor.motion                urgency=0.50 source=mock_sensors payload={}
+2026-09-05 15:43:20,624 [INFO] companion.main: EVENT  topic=expression.curious_glance    urgency=0.50 source=personality payload={'trigger': 'sensor.motion', 'source_payload': {}}
+2026-09-05 15:43:20,624 [INFO] companion.main: EVENT  topic=instinct.reflex_fired        urgency=0.10 source=personality payload={'rule': 'orient_to_motion'}
+2026-09-05 15:43:25,586 [INFO] companion.main: EVENT  topic=network.heartbeat_sent       urgency=0.02 source=remote_bridge payload={}

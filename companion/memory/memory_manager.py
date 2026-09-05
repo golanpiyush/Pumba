@@ -103,7 +103,16 @@ class MemoryManager:
                 source="memory_manager",
             ))
 
+
+    # Topics that must NEVER be filtered out here, regardless of what the
+    # blocklist below says — these are identity-forming facts (a new pet
+    # arriving, being named), not routine plumbing, and MemoryWorthInspector
+    # depends on seeing every one of them.
+    _ALWAYS_STORE_TOPICS = {"memory.entity_acquired", "memory.entity_named"}
+
     def _is_storage_candidate(self, event: Event) -> bool:
+        if event.topic in self._ALWAYS_STORE_TOPICS:
+            return True
         # Skip pure plumbing events — they're not "experiences."
         return not event.topic.startswith(("system.", "instinct.reflex_fired", "mood.changed"))
 

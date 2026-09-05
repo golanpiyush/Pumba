@@ -6,11 +6,11 @@
 # =============================================================================
 
 identity:
-  name: "Pebble"
+  name: "Pumba"
   species_flavor: "small curious creature, part bird-dog-otter energy"
   home_location: "bird_cage"          # matches a key under environment.locations
   habitat: "desk"
-  
+
 # -----------------------------------------------------------------------------
 # EVENT BUS
 # -----------------------------------------------------------------------------
@@ -86,6 +86,22 @@ environment:
   unknown_location_help_after_s: 120.0
 
 # -----------------------------------------------------------------------------
+# COMPANION CONTEXT (who/what am I with right now?)
+# -----------------------------------------------------------------------------
+companion_context:
+  update_interval_s: 5.0              # how often to refresh context assessment
+  presence_timeout_s: 30.0            # how long since last signal before considering entity "absent"
+  confidence_threshold: 0.6           # minimum confidence to assert a context
+  max_context_history: 50             # ring buffer of recent context states
+  activity_inference:
+    min_signals_for_activity: 3       # need this many sensor signals to infer activity
+    signal_window_s: 10.0             # look back this far when counting signals
+  entity_presence:
+    bird_detect_confidence_min: 0.5   # from pet_presence module
+    dog_detect_confidence_min: 0.5    # from pet_presence module
+    human_detect_confidence_min: 0.35 # deliberately lower — weak signal from echo deltas
+
+# -----------------------------------------------------------------------------
 # SENSORS
 # -----------------------------------------------------------------------------
 sensors:
@@ -113,6 +129,8 @@ sensors:
     dog_min_echo_delta_cm: 30
     bird_sound_freq_hz_range: [1500, 8000]
     dog_sound_freq_hz_range: [80, 600]
+    human_min_echo_delta_cm: 45      # deltas at/above this look human-scale rather than dog-scale
+    human_motion_confidence_min: 0.35  # deliberately lower — this is a weak signal, see companion_context.py
 
 # -----------------------------------------------------------------------------
 # VOICE
@@ -134,7 +152,22 @@ voice:
     default_voice: "en-US-AnaNeural"
     rate: "+5%"
     per_person_voice_overrides_key: "tts_voice"   # looked up in people/profiles.yaml
+  amp:
+    baseline_volume: 0.4
+    whisper_volume: 0.15
+    max_volume: 1.0
 
+# -----------------------------------------------------------------------------
+# MUSIC (on-demand streaming via yt-dlp)
+# -----------------------------------------------------------------------------
+music:
+  search_provider: "ytsearch"        # yt-dlp's built-in search prefix
+  max_search_results: 1              # take the top hit, don't make it choose
+  audio_format: "bestaudio"
+  volume_default: 0.5
+  download_cache_dir: "cache/music"  # temp audio files, cleared periodically
+  cache_max_age_s: 86400             # delete cached audio older than this
+  
 # -----------------------------------------------------------------------------
 # BRAIN / LLM ROUTING
 # -----------------------------------------------------------------------------
@@ -161,6 +194,9 @@ brain:
 # -----------------------------------------------------------------------------
 # MEMORY
 # -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
+# MEMORY
+# -----------------------------------------------------------------------------
 memory:
   episodic:
     db_path: "memory/episodic.sqlite3"
@@ -172,6 +208,15 @@ memory:
     max_facts_per_subject: 500
   people:
     db_path: "memory/people.sqlite3"
+  entities:
+    db_path: "memory/entities.sqlite3"
+  open_questions:
+    db_path: "memory/open_questions.sqlite3"
+    stale_after_s: 259200             # 3 days — an unanswered question this old gets auto-abandoned
+  commitments:
+    db_path: "memory/commitments.sqlite3"
+    retention_days_completed: 30      # keep completed commitments for this long
+    retention_days_abandoned: 90      # keep abandoned commitments longer for review
   consolidation:
     run_interval_s: 3600              # how often short-term -> long-term consolidation runs
     min_repeats_for_pattern: 3        # same-ish event N times => becomes a "pattern" belief
@@ -203,6 +248,14 @@ body:
   seven_segment:
     i2c_address: 0x70
     brightness: 0.5
+  vibration:
+    pin: 22
+    patterns:
+      default:        {pulses: 1, intensity: 0.5, pulse_on_s: 0.3, pulse_off_s: 0.0}
+      close_warning:  {pulses: 2, intensity: 0.6, pulse_on_s: 0.2, pulse_off_s: 0.15}
+      chirp_alert:    {pulses: 1, intensity: 0.5, pulse_on_s: 0.3, pulse_off_s: 0.0}
+      loud_distress:  {pulses: 3, intensity: 0.8, pulse_on_s: 0.25, pulse_off_s: 0.1}
+      sos_loop:       {pulses: 6, intensity: 1.0, pulse_on_s: 0.2, pulse_off_s: 0.08}
 
 # -----------------------------------------------------------------------------
 # POWER
@@ -241,3 +294,56 @@ logging:
   level: "INFO"
   max_bytes: 5000000
   backup_count: 5
+
+# -----------------------------------------------------------------------------
+# TIME AWARENESS
+# -----------------------------------------------------------------------------
+time_awareness:
+  timezone: "Asia/Kolkata"           # used to localize "today", quiet hours, etc.
+  quiet_hours_start: "22:30"
+  quiet_hours_end: "07:00"
+  stale_clock_warn_after_s: 3600     # if system clock hasn't ticked forward in this long, something's wrong
+
+# -----------------------------------------------------------------------------
+# MEMORY WORTH INSPECTOR (meta-inspector above relevance_scorer)
+# -----------------------------------------------------------------------------
+memory_worth:
+  trauma_keywords_topics:            # topics that are ALWAYS candidates for permanent retention
+    - "sensor.fall_detected"
+    - "sensor.possible_fall"
+    - "pet.danger_detected"
+    - "power.critical_battery"
+    - "network.prolonged_outage"
+  trauma_retention_days: 3650        # effectively "keep forever" (10 years)
+  funny_moment_valence_spike_min: 0.35   # a sudden positive mood jump worth remembering fondly
+  boredom_forgettable_arousal_max: 0.15  # near-zero arousal ambient events are near-never worth keeping
+
+# -----------------------------------------------------------------------------
+# DANGER ESCALATION (bird/dog harm response)
+# -----------------------------------------------------------------------------
+danger_escalation:
+  bird_distress_sound_db_min: 65     # rough loudness threshold suggesting bird distress call, not routine chirp
+  proximity_danger_cm_max: 8         # dog/other object closer than this to the bird is treated as a danger event
+  danger_confirm_window_s: 2.0       # signals must co-occur within this window to count as "in danger," not coincidence
+  escalation_stages:                 # each stage after the same unresolved danger persists this many seconds
+    - {after_s: 0,  volume_multiplier: 1.0, pattern: "chirp_alert"}
+    - {after_s: 8,  volume_multiplier: 1.6, pattern: "loud_distress"}
+    - {after_s: 20, volume_multiplier: 2.2, pattern: "sos_loop"}
+  wake_someone_after_s: 25.0         # how long unresolved danger persists before trying to actually wake a human
+  call_target_priority: ["nigam", "family_default"]  # who to try to reach, in order
+
+# -----------------------------------------------------------------------------
+# COMMITMENTS (things you said you'd do — Pebble holds you to them)
+# -----------------------------------------------------------------------------
+commitment_watchdog:
+  check_interval_s: 60.0             # how often to sweep for overdue commitments
+  renag_interval_s: 900.0            # don't repeat the same nag more than every 15 min
+  overdue_urgency: 0.35              # ambient-tier, not reflex-tier — a nag, not an alarm
+  default_grace_period_s: 300.0      # 5 min slack after "expected_by" before it's officially overdue
+  vague_promise_default_wait_s: 1800.0  # for "in a bit"/"soon" with no clear time, assume ~30 min
+
+# -----------------------------------------------------------------------------
+# ENTITY RESOLVER (naming/acquisition, clarifying questions)
+# -----------------------------------------------------------------------------
+entity_resolver:
+  reask_after_s: 3600                # if a question's still open after an hour, worth re-raising naturally
