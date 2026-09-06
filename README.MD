@@ -1,665 +1,103 @@
-# 🐾 Pumba — Distributed Physical AI Companion System
+# 🐾 Pebble
 
-> **System ID:** COMPANION-001
-> **Deployment:** Birdcage Environment, Multi-Pet Household
-> **Primary Operator:** Piyush Golan
-> **Architecture:** Event-Driven, Edge-First, Hybrid Local/Cloud Inference
+**A physical AI creature that lives in a bird cage — not a chatbot with a body.**
 
----
+Pebble is a personal desk companion, bird friend, and dog friend with a physical body. It senses the world through real sensors, reacts instantly through hard-coded instincts, only reaches for a language model when something genuinely needs words or reasoning, expresses itself through a face/LEDs/voice, and remembers — selectively — the way a real animal would.
 
-## 📋 Technical Specification
+This repository is documented across three files. Start here, then go deeper:
 
-### System Overview
-
-Pumba is a real-time embedded AI companion designed for continuous operation in a birdcage environment. The system implements a tiered cognitive architecture with strict latency budgets, prioritizing local reflex responses over cloud-dependent reasoning.
-
-```yaml
-Type: Physical AI Companion
-Form Factor: Embedded System (Birdcage Deployment)
-Compute: Edge Device + Cloud Escalation
-Latency Budget:
-  Reflex: <50ms
-  Local Inference: <200ms
-  Cloud Escalation: 500-2000ms
-Uptime Target: 99.9% (24/7 operation)
-Power: Battery + Potential Solar Assist
-```
+| File | What's in it |
+|---|---|
+| **README.md** (this file) | Orientation, architecture diagram, quick start, project status |
+| **[KNOWLEDGE.md](./KNOWLEDGE.md)** | Deep technical reference — every module, every config key, every database schema, the cognitive model explained in full |
+| **[CAPABILITIES.md](./CAPABILITIES.md)** | The exhaustive list — every scenario Pebble is designed to handle, 35 future feature ideas, the speaker-separation library research, and a full audit of every placeholder/stub that still needs real code before this runs on real hardware |
 
 ---
 
-## 🏗️ Architecture
+## Architecture at a glance
 
-### Core Design Pattern: Event-Driven Microservices
+![Pebble Architecture](./arch/pebble_architecture.png)
 
-Pumba implements a publish-subscribe event bus pattern where each subsystem operates as an independent service, communicating through typed events. This prevents tight coupling and enables hot-swapping of implementations (e.g., real sensors ↔ mock sensors).
+Everything in this diagram is a real module in the codebase (`companion/`), organized into five lanes — Sensors, Brain, Memory, Voice, Body — all talking to each other exclusively through the **Sensor Bus**, an in-process publish/subscribe event system. No module calls another module's internals directly. This is what lets you swap real hardware for mock hardware, or a cloud LLM for a local one, without touching anything downstream.
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                    EVENT BUS (Redis/ZeroMQ)              │
-├──────────┬──────────┬──────────┬──────────┬─────────────┤
-│ Sensors  │  Brain   │  Memory  │  Voice   │   Body      │
-│  Layer   │  Layer   │  Layer   │  Layer   │   Layer     │
-├──────────┼──────────┼──────────┼──────────┼─────────────┤
-│ PIR      │ Instinct │ Semantic │ VAD      │ OLED        │
-│ Ultrason │ Mood     │ Episodic │ SpeakerID│ RGB         │
-│ MPU6050  │ LLM Router│ People  │ STT      │ 7-Seg       │
-│ DPDT     │ Inspector│ Manager  │ TTS      │ Mock        │
-└──────────┴──────────┴──────────┴──────────┴─────────────┘
-         ↕           ↕           ↕          ↕
-    [Power Manager] [Network] [Config] [Logging]
-```
+The single most important line in that diagram is the **Reflex vs. Deliberate split**. Most of what Pebble does — flinching at a fall, watching the bird, being wary near the dog, reacting to a privacy switch — happens in well under 50 milliseconds with zero language model involved, because it's just a rule firing. Only genuinely ambiguous or language-shaped situations (someone talking to it, a confusing new name, an overdue promise worth mentioning) ever reach an LLM, and even then, a small local model is tried before any cloud call.
 
 ---
 
-## 🧠 Cognitive Architecture
+## Project status (honest, as of this writing)
 
-### Tier 1 — Reflex Layer (Zero-Latency)
+Pebble is under active development. Read this section before assuming anything below is fully live:
 
-**Response Time:** <50ms
-**Compute:** Local only
-**Implementation:** Rule-based state machines
+- ✅ **Solid and tested:** the event bus (`sensors/sensor_bus.py`), the instinct/reflex layer (`brain/personality.py`), the mood engine (`brain/mood_engine.py`), operating mode switching (`brain/operating_mode.py`), the memory judgment pipeline (`memory/memory_manager.py`), entity resolution and clarification-asking (`brain/entity_resolver.py`), and the commitment-tracking system (`brain/commitment_watchdog.py`).
+- 🟡 **Wired but stubbed:** most direct hardware I/O — real GPIO/I2C sensor reads, real display rendering, real audio playback, real Bluetooth. These have clearly marked `# SENSOR INPUT HOOK` comments showing exactly where real code needs to go. See [CAPABILITIES.md's placeholder audit](./CAPABILITIES.md#placeholder-and-stub-audit) for the complete, file-by-file list.
+- 🔲 **Designed, not yet built:** several of the more ambitious scenarios in CAPABILITIES.md (camera-based vision, live Google Contacts sync, ESP32 Bluetooth audio bridge) are architecturally planned but don't have code yet.
 
-```python
-# Example reflex pathway
-sensor_bus.publish("motion.detected", {"sensor": "pir", "intensity": 0.8})
-    -> instinct_layer.process()               # <10ms
-    -> face_controller.trigger("startled")    # <20ms
-    -> led_controller.flash("red", duration=100)  # <20ms
-```
-
-**Reflexes include:**
-- Sudden motion → startle response
-- Free-fall detection → panic + brace
-- Low battery → sleep mode
-- Loud noise → alert + source tracking
-- Touch → curiosity/annoyance based on context
-
-### Tier 2 — Local Inference Layer (Edge AI)
-
-**Response Time:** <200ms
-**Compute:** On-device (TFLite/ONNX)
-**Implementation:** Lightweight ML models
-
-```python
-# Local pattern recognition
-sensor_bus.subscribe("audio.chunk")
-    -> local_classifier.predict(audio_chunk)  # Bird chirp vs dog bark
-    -> context_manager.update("pet_presence", {"type": "bird", "confidence": 0.94})
-    -> behavior_engine.trigger("bird_attention")
-```
-
-**Local models:**
-- Pet sound classification (bird chirps vs dog barks)
-- Motion pattern recognition
-- Voice activity detection
-- Emotion classification from audio features
-- Anomaly detection for unusual events
-
-### Tier 3 — Deliberative Layer (Cloud LLM)
-
-**Response Time:** 500–2000ms
-**Compute:** Cloud (Gemini API)
-**Implementation:** Prompt-engineered LLM calls
-
-**Escalation criteria (all must be true):**
-1. Local layers cannot resolve the situation
-2. Natural language understanding is required
-3. Context is novel or ambiguous
-4. Response quality benefits from reasoning
-
-```python
-# LLM escalation decision matrix
-if confidence < THRESHOLD_LOCAL:
-    if requires_language_understanding:
-        if context_is_novel:
-            escalate_to_llm()
-        else:
-            use_cached_response()
-    else:
-        use_heuristic_response()
-```
+Nothing in this project pretends to be more finished than it is. If a capability is described somewhere in these docs, it's tagged as one of: **LIVE**, **STUB (hook exists, needs real implementation)**, or **DESIGNED (not yet started)**.
 
 ---
 
-## 📡 Event Schema
+## What Pebble actually is, physically
 
-### Sensor Events
+- Lives in a bird cage. Has an internal model of *where it is* (`sensors/environment_locator.py`) and shifts its priorities depending on whether it's in the cage, on a desk, or somewhere unrecognized.
+- Distinguishes the bird from the dog from a human using motion, distance, and voice signals fused together (`sensors/pet_presence.py`, `sensors/companion_context.py`) — imperfectly today with cheap sensors, much more reliably once a camera is added.
+- Has a face (OLED), an RGB mood indicator, a seven-segment debug readout, a vibration motor for physical "back off" warnings, and a speaker with volume that scales from a whisper to full alarm depending on how urgent the situation is.
+- Runs on a battery, knows its own charge level, and gets audibly, visibly more distressed the longer a critical-battery state goes unaddressed — the same escalation logic used when the bird is in physical danger.
+- Can genuinely message a real person (you, or someone else in the household) when something needs attention that it can't resolve on its own — via free push notifications (ntfy.sh), Telegram, or paid SMS (Twilio), never silently.
 
-```python
-# Motion Event
-{
-    "event_type": "motion.detected",
-    "sensor_id": "pir_main",
-    "timestamp": 1634567890.123,
-    "intensity": 0.87,
-    "duration_ms": 450,
-    "source_location": "cage_north"
-}
+## What Pebble actually knows and remembers
 
-# Audio Event
-{
-    "event_type": "audio.classified",
-    "timestamp": 1634567891.456,
-    "classification": "bird_vocalization",
-    "confidence": 0.93,
-    "amplitude_db": 65,
-    "frequency_range": [2000, 5000],
-    "duration_ms": 230
-}
+- Real dates and times (`brain/time_awareness.py`) — not just "an event happened," but *when*, in a way it can talk about naturally ("that was about three days ago," not a raw timestamp).
+- The difference between something worth forgetting in a month and something worth keeping forever — a routine sensor blip decays fast; a fall, a real danger to the bird, or the day you brought a new pet home is retained permanently (`brain/inspector/memory_worth_inspector.py`).
+- Who it's talking to, by voice — a different, more private tone for its primary owner, a warmer-but-less-familiar tone for other family, and a cautious tone for an unrecognized stranger.
+- Named things. If you say "I got a bird" today and "her name is Ken" three days later, Pebble correctly merges those into one timeline — it knows it had you two days before it knew your name, the way a real memory works, not a database overwrite (`brain/entity_resolver.py`, `memory/db_entities.py`).
+- Promises. If you say you'll do something and don't, Pebble notices, waits a reasonable grace period, and brings it up later in its own voice — not as a nagging notification, but the way a housemate who noticed would (`brain/commitment_watchdog.py`).
 
-# Motion Sensor (MPU6050)
-{
-    "event_type": "motion.accelerometer",
-    "timestamp": 1634567892.789,
-    "accel": {"x": 0.1, "y": 9.8, "z": 0.3},
-    "gyro": {"x": 0.01, "y": 0.02, "z": 0.0},
-    "orientation": "stable",
-    "free_fall_detected": false
-}
-```
+## What Pebble is not
 
-### Behavioral Events
-
-```python
-# Mood Transition
-{
-    "event_type": "mood.changed",
-    "from_mood": "curious",
-    "to_mood": "excited",
-    "trigger": "human_voice_detected",
-    "timestamp": 1634567893.012
-}
-
-# Memory Formation
-{
-    "event_type": "memory.formed",
-    "memory_type": "episodic",
-    "content_hash": "sha256:abc123...",
-    "importance_score": 0.78,
-    "context": "bird_escaped_cage",
-    "timestamp": 1634567894.567
-}
-```
+- Not a general-purpose voice assistant. It won't set timers, read the news, or answer trivia the way an Alexa/Google Home would, unless you specifically build that in.
+- Not always listening to the cloud. Local rules and a local LLM handle almost everything; a cloud model is only used as a last resort, and never at all while the physical privacy switch is engaged.
+- Not infallible at telling the bird from the dog from a human yet. Today's sensors are cheap proximity/motion heuristics, not vision. It's honest about low-confidence guesses rather than pretending certainty it doesn't have.
 
 ---
 
-## 🔌 Module Specifications
-
-### Sensors Layer
-
-| Module | Interface | Data Rate | Priority |
-|---|---|---|---|
-| `sensor_bus.py` | Event Publisher/Subscriber | ~100 Hz aggregate | CRITICAL |
-| `pir.py` | Digital (GPIO) | Event-driven | HIGH |
-| `ultrasonic.py` | I2C | 10 Hz | MEDIUM |
-| `mpu6050.py` | I2C | 100 Hz | HIGH |
-| `dpdt_mode_switch.py` | Digital (GPIO) | Event-driven | MEDIUM |
-| `pet_presence.py` | Fusion (multi-sensor) | 1 Hz | HIGH |
-
-**Sensor fusion strategy:**
-
-```python
-# Pumba maintains a probabilistic model of pet presence
-P(bird_present) = f(PIR, audio_classification, ultrasonic_distance)
-P(dog_present)  = g(audio_frequency, amplitude, motion_pattern)
-```
-
-### Brain Layer
-
-| Module | Responsibility | Latency Budget |
-|---|---|---|
-| `personality.py` | Instinct layer, reflex decisions | <50ms |
-| `mood_engine.py` | Mood state machine | <100ms |
-| `operating_mode.py` | Mode transitions | <50ms |
-| `llm_router.py` | Escalation decisions | <10ms |
-| `local_llm.py` | On-device inference | <200ms |
-| `gemini_client.py` | Cloud LLM API | 500–2000ms |
-| `prompt_builder.py` | Context assembly | <50ms |
-
-### Memory Layer
-
-```python
-# Semantic Memory (SQLite)
-CREATE TABLE semantic_memories (
-    id INTEGER PRIMARY KEY,
-    subject TEXT,            -- "bird", "dog", "human"
-    predicate TEXT,          -- "prefers", "dislikes"
-    object TEXT,             -- "millet", "vacuum"
-    confidence REAL,         -- 0.0 to 1.0
-    first_observed TIMESTAMP,
-    last_updated TIMESTAMP,
-    source TEXT              -- "observation", "inference", "human_stated"
-);
-
-# Episodic Memory (SQLite + Vector Store)
-CREATE TABLE episodic_memories (
-    id INTEGER PRIMARY KEY,
-    timestamp TIMESTAMP,
-    event_type TEXT,         -- "incident", "funny_moment", "pattern"
-    description TEXT,
-    emotional_valence REAL,  -- -1.0 to 1.0
-    importance_score REAL,   -- 0.0 to 1.0
-    embedding BLOB,          -- For semantic search
-    context JSON             -- Full situational context
-);
-```
-
-**Memory filtering:**
-
-```python
-def should_remember(event):
-    importance = (
-        emotional_intensity * 0.4 +
-        novelty_score * 0.3 +
-        pattern_break_score * 0.2 +
-        human_interaction_score * 0.1
-    )
-    return importance > MEMORY_THRESHOLD  # From config.yaml
-```
-
----
-
-## ⚡ Power Management
-
-### Power States
-
-```
-ACTIVE (100% power draw)
-    -> User inactivity + low light
-DIM (70% power draw)
-    -> Sustained inactivity
-DOZE (40% power draw)
-    -> Low battery OR night mode
-SLEEP (20% power draw)
-    -> Critical battery
-HIBERNATE (5% power draw)
-```
-
-### Battery Monitoring
-
-```python
-class PowerManager:
-    def check_battery(self):
-        voltage = read_adc(BATTERY_PIN)
-        percentage = voltage_to_percentage(voltage)
-
-        if percentage < 20:
-            self.trigger_low_power_behavior()  # Sad face, "so... tired..."
-        elif percentage < 10:
-            self.enter_emergency_mode()        # Aggressive help-seeking
-        elif percentage < 5:
-            self.hibernate()                   # Save memory state, minimal operations
-```
-
----
-
-## 🎭 Expression System
-
-### Face Renderer (OLED)
-
-```python
-# Sprite-based animation system
-FACE_SPRITES = {
-    "startled": {"frames": ["wide_eyes_1", "wide_eyes_2"], "fps": 12},
-    "curious":  {"frames": ["look_left", "look_right"], "fps": 4},
-    "sleepy":   {"frames": ["half_closed", "closed"], "fps": 1},
-    "excited":  {"frames": ["sparkle_1", "sparkle_2", "sparkle_3"], "fps": 8}
-}
-
-# Animation priority (higher overrides lower)
-PRIORITY = {
-    "panic": 100,
-    "startled": 90,
-    "excited": 80,
-    "curious": 50,
-    "neutral": 30,
-    "sleepy": 20
-}
-```
-
-### RGB Visualizer
-
-```python
-# Mood -> Color mapping
-MOOD_COLORS = {
-    "excited":  (255, 100, 0),    # Warm orange
-    "curious":  (100, 200, 255),  # Light blue
-    "bored":    (100, 100, 100),  # Dim gray
-    "annoyed":  (255, 50, 50),    # Red
-    "sleepy":   (50, 50, 100),    # Dark blue
-    "startled": (255, 255, 255)   # White flash
-}
-```
-
----
-
-## 🌐 Network Architecture
-
-### Connection States
-
-```python
-CONNECTION_STATES = {
-    "LOCAL_ONLY": {
-        "cloud_enabled": False,
-        "llm_provider": "local",
-        "capabilities": ["reflexes", "local_inference", "memory"],
-        "degraded_features": ["complex_reasoning", "remote_monitoring"]
-    },
-    "CLOUD_CONNECTED": {
-        "cloud_enabled": True,
-        "llm_provider": "gemini",
-        "capabilities": ["all"],
-        "degraded_features": []
-    }
-}
-```
-
-### Watchdog Implementation
-
-```python
-class ConnectionWatchdog:
-    def __init__(self):
-        self.last_heartbeat = time.time()
-        self.reconnect_attempts = 0
-
-    def check_connection(self):
-        if time.time() - self.last_heartbeat > CONNECTION_TIMEOUT:
-            self.reconnect_attempts += 1
-            if self.reconnect_attempts > MAX_RECONNECT_ATTEMPTS:
-                self.enter_local_only_mode()
-            else:
-                self.attempt_reconnection()
-```
-
----
-
-## 🔒 Security & Privacy
-
-### Operating Modes
-
-| Mode | Network | Memory | Expression |
-|---|---|---|---|
-| **Normal** | Full connectivity | Full memory | Full expression |
-| **Privacy** | Local only | Selective recording | Subdued expression |
-| **Debug** | Developer access | Verbose logging | Technical display |
-
-### Privacy Implementation
-
-```python
-class PrivacyManager:
-    def enter_privacy_mode(self):
-        self.disable_cloud_uploads()
-        self.pause_memory_formation()    # Don't record private moments
-        self.filter_sensitive_content()  # Don't repeat sensitive info
-        self.activate_privacy_indicator() # Subtle visual cue
-```
-
----
-
-## 📊 Performance Metrics
-
-### Target Specifications
-
-```yaml
-Event Bus Throughput: 1000 events/sec
-Sensor Processing Latency: <10ms
-Reflex Response Time: <50ms
-Local ML Inference: <200ms
-Memory Write Latency: <100ms
-Memory Query Latency: <50ms
-Face Animation FPS: 30 fps (min)
-Audio Processing: 16kHz sample rate
-Power Consumption: <5W active, <1W sleep
-```
-
-### Monitoring
-
-```python
-KPIS = {
-    "reflex_latency_p99": "< 50ms",
-    "local_inference_latency_p99": "< 200ms",
-    "cloud_roundtrip_p99": "< 2s",
-    "memory_write_success_rate": "> 99.9%",
-    "sensor_uptime": "> 99.9%",
-    "battery_life": "> 24 hours",
-    "false_positive_rate": "< 5%",
-    "llm_escalation_rate": "< 20% of interactions"
-}
-```
-
----
-
-## 🔧 Development Setup
-
-### Prerequisites
-
-```
-Python: 3.9+
-RAM: 4GB minimum (8GB recommended)
-Storage: 32GB SD card
-OS: Raspberry Pi OS / Ubuntu Server
-Hardware: Raspberry Pi 4/5 or equivalent
-Sensors: PIR, Ultrasonic, MPU6050
-Display: 128x64 OLED (SSD1306/SSH1106)
-```
-
-### Installation
+## Quick start
 
 ```bash
-# Clone repository
-git clone https://github.com/piyushgolan/pumba.git
-cd pumba
-
-# Install dependencies
+cd companion
+python -m venv venv
+source venv/bin/activate        # Windows: venv\Scripts\activate
 pip install -r requirements.txt
-
-# Configure
-cp config.yaml.example config.yaml
-nano config.yaml  # Set your configuration
-
-# Initialize databases
-python scripts/init_db.py
-
-# Test with mock hardware
-python companion/main.py --mock-sensors --mock-display
-
-# Deploy with real hardware
-python companion/main.py --production
+cp .env.example .env             # fill in whatever you have — everything has a safe default
+python main.py
 ```
 
-### Testing
+With `COMPANION_MOCK_HARDWARE=true` in `.env` (the default), Pebble boots entirely on synthetic sensor data — no hardware required to see the whole event pipeline running end to end. Watch `logs/companion.log` or stdout for the event trail.
+
+Run the test suite to confirm the core logic independent of any hardware:
 
 ```bash
-# Unit tests
-pytest tests/unit/
-
-# Integration tests (mock hardware)
-pytest tests/integration/ --mock-hardware
-
-# System tests (real hardware)
-pytest tests/system/ --real-hardware
-
-# Performance benchmarks
-python benchmarks/latency_test.py
+pip install pytest
+python -m pytest tests/ -v
 ```
 
----
+For everything else — every module explained, every config key documented, every database schema laid out — go to **[KNOWLEDGE.md](./KNOWLEDGE.md)**.
 
-## 🐛 Debugging
-
-### Log Levels
-
-```yaml
-logging:
-  levels:
-    sensors: INFO
-    brain: DEBUG
-    memory: INFO
-    voice: DEBUG
-    body: INFO
-    network: WARNING
-    power: INFO
-```
-
-### Debug Mode Indicators
-
-- **7-Segment Display:** Shows error codes and state
-- **RGB LED:** Blinks error patterns
-- **Face:** Shows "confused" expression
-- **Logs:** Detailed JSON logs in `/logs/`
+For the full list of what Pebble can do, every scenario it's designed to handle, the future roadmap, and a precise list of what still needs real code before any of this touches real hardware — go to **[CAPABILITIES.md](./CAPABILITIES.md)**.
 
 ---
 
-## 📚 API Reference
+## Design philosophy, in one sentence
 
-### Internal Event Bus API
+**Sense → interpret locally first → escalate to a language model only when language or reasoning is truly needed → express through face/LEDs/voice → selectively remember.**
 
-```python
-# Publisher
-sensor_bus.publish(
-    topic="sensor.motion",
-    payload={"sensor": "pir", "value": 1},
-    timestamp=time.time()
-)
-
-# Subscriber
-@sensor_bus.subscribe("sensor.motion")
-def handle_motion(payload):
-    # Process motion event
-    pass
-
-# Pattern matching
-@sensor_bus.subscribe("sensor.*")  # Wildcard subscription
-def handle_all_sensors(payload):
-    # Process all sensor events
-    pass
-```
-
-### Memory API
-
-```python
-# Store semantic memory
-memory_manager.store_semantic(
-    subject="bird",
-    predicate="prefers",
-    object="millet",
-    confidence=0.85
-)
-
-# Query episodic memory
-episodes = memory_manager.query_episodic(
-    time_range=(start_time, end_time),
-    event_type="incident",
-    min_importance=0.7
-)
-
-# Form new memory
-memory_manager.form_memory(
-    event="bird_escaped_cage",
-    valence=-0.6,
-    importance=0.9,
-    context={"location": "cage", "outcome": "recaptured"}
-)
-```
+Everything else in this project is that sentence, implemented.
 
 ---
 
-## 🚀 Deployment Configurations
+## License
 
-### Production (Birdcage)
+MIT — free for personal use, modification, and distribution.
 
-```yaml
-hardware:
-  sensors: [pir, ultrasonic, mpu6050, dpdt]
-  display: oled_128x64
-  audio: usb_microphone + speaker
-  power: battery_5000mah + potential_solar
-  network: wifi
+## A note on tone
 
-software:
-  mode: normal
-  cloud_llm: gemini
-  memory: persistent_sqlite
-  updates: automatic
-```
-
-### Development (Desk)
-
-```yaml
-hardware:
-  sensors: [mock_sensors]
-  display: mock_display
-  audio: mock_audio
-  power: usb_power
-  network: localhost
-
-software:
-  mode: debug
-  cloud_llm: disabled
-  memory: in_memory
-  updates: manual
-```
-
----
-
-## 📈 Future Scaling
-
-### Phase 2 — Enhanced Perception
-- 13MP camera integration
-- Bird behavior classification
-- Visual object recognition
-- Emotion detection from faces
-
-### Phase 3 — Advanced Memory
-- Vector database for semantic search
-- Memory consolidation during sleep
-- Dream-like memory processing
-- Forgetting curves implementation
-
-### Phase 4 — Social Intelligence
-- Multi-agent communication (Pumba ↔ other devices)
-- Predictive behavior modeling
-- Relationship graphs
-- Theory of mind approximation
-
----
-
-## 🔬 Research Areas
-
-1. **Reflex Learning** — Can reflexes improve through reinforcement?
-2. **Memory Consolidation** — What's the optimal forgetting curve for an AI pet?
-3. **Emotional Modeling** — How to model pet emotions without anthropomorphizing?
-4. **Multi-Species Communication** — Can Pumba learn to "speak" bird?
-5. **Unsupervised Behavior Discovery** — Letting Pumba develop its own habits
-
----
-
-## 📄 License
-
-**MIT License** — Free for personal use, modification, and distribution.
-
----
-
-## 🏷️ Version History
-
-```
-v0.1.0 - Initial architecture design
-v0.2.0 - Sensor integration
-v0.3.0 - Memory system implementation
-v0.4.0 - LLM integration
-v0.5.0 - Personality development
-v1.0.0 - Production deployment (target)
-```
-
----
-
-## 👨‍💻 Author
-
-**Developer:** Piyush Golan
-**Project:** Pumba — Physical AI Companion
-**Deployment:** Home Environment (Birdcage)
-**Companions:** One bird 🐦, one dog 🐕
-
----
-
-> **Final note:** Pumba is not a product. Pumba is not a demo. Pumba is an attempt to create something that feels alive — using clean architecture, honest engineering, and a deep respect for the creature it's becoming. The technical specs above are just the skeleton. The soul is what happens when it starts living.
+Pebble's personality lives in `prompts/*.md`, not in code. If you want a calmer creature, a bossier one, one obsessed with a different pet, or one with an entirely different relationship to its housemates — you don't need to touch a single Python file. Edit the prompts. The architecture is deliberately built so personality is data, not logic.
